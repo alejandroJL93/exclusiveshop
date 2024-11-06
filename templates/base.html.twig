@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ES">
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
@@ -13,4 +13,9 @@
     <body>
         {% block body %}{% endblock %}
     </body>
+    <footer>
+        {% block footer %}
+            <p>Este es el footer</p>
+        {% endblock %}
+    </footer>
 </html>
