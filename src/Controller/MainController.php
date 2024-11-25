@@ -2,17 +2,23 @@
 
 namespace App\Controller;
 
-
+use App\Repository\ArticleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-
 class MainController extends AbstractController
 {
     #[Route('/')]
-    public function homepage() : Response
+    public function homepage(ArticleRepository $articleRepository): Response
     {
-        return $this->render(view: ('main/homepage.html.twig'));
+        $articles = $articleRepository->findAll();
+        $articlesCount = count($articles);
+        $myArticle  = $articles[array_rand($articles)];
+
+        return $this->render('main/homepage.html.twig', [
+            'numberOfArticles' => $articlesCount,
+            'myArticle' => $myArticle,
+        ]);
     }
 }

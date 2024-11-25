@@ -1,10 +1,41 @@
 {% extends 'base.html.twig' %}
-
+{% block title %}ExclusiveShop: Beam up some parts!{% endblock %}
 {% block body %}
-    <h1>HOLA </h1>
-{% endblock %}
+<h1>
+    Starshop: your monopoly-busting option for Starship parts!
+</h1>
 
-{% block footer %}
-    <h1>Este footer es propia de la home </h1>
-{% endblock %}
+<div>
+    Browse through {{ numberOfArticles * 10 }} starships!
 
+    {% if myArticle|length > 1 %}
+        <p>
+            {# Do you think "shiploads" will pass the legal team? #}
+            That's a shiploads of ships!
+        </p>
+    {% endif %}
+</div>
+
+<div>
+    <h2>My Article</h2>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <td>{{ myArticle.name }}</td>
+        </tr>
+        <tr>
+            <th>Class</th>
+            <td>{{ myArticle.class }}</td>
+        </tr>
+        <tr>
+            <th>Status</th>
+            <td>{{ myArticle.size }}</td>
+        </tr>
+        <tr>
+            <th>Size</th>
+            <td>{{ myArticle.status }}</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}
