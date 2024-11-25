@@ -2,16 +2,16 @@
 {% block title %}ExclusiveShop: Beam up some parts!{% endblock %}
 {% block body %}
 <h1>
-    Starshop: your monopoly-busting option for Starship parts!
+    ExclusiveShop:  tu tienda de colecciones únicas
 </h1>
 
 <div>
-    Browse through {{ numberOfArticles * 10 }} starships!
+   Mas de  {{ numberOfArticles * 10 }} Articulos!
 
     {% if myArticle|length > 1 %}
         <p>
             {# Do you think "shiploads" will pass the legal team? #}
-            That's a shiploads of ships!
+            Este es tu pedido
         </p>
     {% endif %}
 </div>
