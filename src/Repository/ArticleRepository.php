@@ -31,4 +31,13 @@ class ArticleRepository
             )
         ];
     }
+    public function find(int $id): ?Articulo
+    {
+        foreach ($this->findAll() as $article) {
+            if ($article->getId() === $id) {
+                return $article;
+            }
+        }
+        return null;
+    }
 }

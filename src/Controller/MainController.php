@@ -10,9 +10,9 @@ use Symfony\Component\Routing\Attribute\Route;
 class MainController extends AbstractController
 {
     #[Route('/')]
-    public function homepage(ArticleRepository $articleRepository): Response
+    public function homepage(ArticleRepository $Repository): Response
     {
-        $articles = $articleRepository->findAll();
+        $articles = $Repository->findAll();
         $articlesCount = count($articles);
         $myArticle  = $articles[array_rand($articles)];
 
