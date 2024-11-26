@@ -14,9 +14,10 @@ class MainController extends AbstractController
     {
         $articles = $Repository->findAll();
         $articlesCount = count($articles);
-        $myArticle  = $articles[array_rand($articles)];
+        $myArticle = $articles[array_rand($articles)];
 
         return $this->render('main/homepage.html.twig', [
+            'articles' => $articles,
             'numberOfArticles' => $articlesCount,
             'myArticle' => $myArticle,
         ]);

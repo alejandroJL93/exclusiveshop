@@ -7,12 +7,10 @@ class Articulo
     public function __construct(
         private int $id,
         private string $name,
-        private string $size,
+        private ArticleSizeEnum $size,
         private string $class,
         private string $status,
-
-    ){
-
+    ) {
     }
 
     public function getId(): int
@@ -29,33 +27,39 @@ class Articulo
     {
         return $this->status;
     }
+
     public function setStatus(string $status): void
     {
         $this->status = $status;
     }
+
     public function getClass(): string
     {
         return $this->class;
     }
+
     public function setClass(string $class): void
     {
         $this->class = $class;
     }
-    public function getSize(): string
+
+    public function getSize(): ArticleSizeEnum
     {
         return $this->size;
     }
-    public function setSize(string $size): void
+
+    public function getSizeString(): string
     {
-        $this->size = $size;
+        return $this->size->value;
     }
+
     public function getName(): string
     {
         return $this->name;
     }
+
     public function setName(string $name): void
     {
         $this->name = $name;
     }
-
 }
