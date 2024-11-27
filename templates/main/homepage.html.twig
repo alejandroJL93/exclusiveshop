@@ -13,7 +13,7 @@
     <!-- start ship item -->
     <div class="bg-[#16202A] rounded-2xl pl-5 py-5 pr-11 flex flex-col min-[1174px]:flex-row min-[1174px]:justify-between">
     <div class="flex justify-center min-[1174px]:justify-start">
-    <img class="h-[83px] w-[84px]" src="/assets/images/status-in-progress.png" alt="Status: in progress">
+    <img class="h-[83px] w-[84px]" src="{{ asset('images/status-in-progress.png') }}" alt="Status: in progress">
     <div class="ml-5">
     <div class="rounded-2xl py-1 px-3 flex justify-center w-32 items-center bg-amber-400/10">
         <div class="rounded-full h-2 w-2 bg-amber-400 blur-[1px] mr-2"></div>
@@ -42,8 +42,10 @@
         <!-- end ship item -->
     </div>
         <p class="text-lg mt-5 text-center md:text-left">
-            Looking for your next galactic ride?
-            <a href="#" class="underline font-semibold">Browse the {{ myArticle|length * 10 }} Articles for sale!</a>
+            ¿Buscas tu próximo viaje galáctico? 🚀✨ Ya seas un explorador del espacio o simplemente estés soñando con las estrellas, déjame ayudarte.
+        </p>
+        <p>
+            <a href="#" class="underline font-semibold">¡Explora los {{ myArticle|length * 10 }} artículos en venta!</a>
         </p>
     </div>
     </main>

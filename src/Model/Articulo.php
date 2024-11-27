@@ -9,7 +9,7 @@ class Articulo
         private string $name,
         private ArticleSizeEnum $size,
         private string $class,
-        private string $status,
+        private ArticleStatusEnum $status,
     ) {
     }
 
@@ -23,15 +23,19 @@ class Articulo
         $this->id = $id;
     }
 
-    public function getStatus(): string
+    public function getStatus(): ArticleSizeEnum
+    {
+        return $this->status;
+    }
+    public function getStatusString(): string
+    {
+        return $this->status->value;
+    }
+    public function setStatus(): ArticleSizeEnum
     {
         return $this->status;
     }
 
-    public function setStatus(string $status): void
-    {
-        $this->status = $status;
-    }
 
     public function getClass(): string
     {
